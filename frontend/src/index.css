@@ -15,6 +15,11 @@ main {
   flex: 1;
 }
 
+.btn-primary {
+  background-color: #f0c040;
+  color: #000000;
+}
+
 .logoGeeksHubs {
   max-width: 200px;
 }
@@ -23,6 +28,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.rating span {
+  color: #ffc000;
 }
 
 .product {

@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      //_id: '1',
       name: 'Camiseta Nike Slim',
       slug: 'nike-slim-shirt',
       category: 'Shirts',
@@ -14,7 +14,7 @@ const data = {
       description: 'Camiseta de gran calidad para hacer deporte',
     },
     {
-      _id: '2',
+      //_id: '2',
       name: 'Camiseta Adidas Slim',
       slug: 'adidas-slim-shirt',
       category: 'Shirts',
@@ -27,7 +27,7 @@ const data = {
       description: 'Camiseta de gran calidad para hacer deporte',
     },
     {
-      _id: '3',
+      //_id: '3',
       name: 'Pantalón Nike Fit',
       slug: 'nike-fit-pant',
       category: 'Pants',
@@ -40,7 +40,7 @@ const data = {
       description: 'Pantalón de gran calidad para hacer deporte',
     },
     {
-      _id: '4',
+      //_id: '4',
       name: 'Pantalón Adidas fit',
       slug: 'adidas-fit-pant',
       category: 'Pants',

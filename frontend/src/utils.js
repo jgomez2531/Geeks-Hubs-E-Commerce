@@ -3,3 +3,7 @@ export const getError = (error) => {
     ? error.response.data.message
     : error.message;
 };
+
+export const replaceDotWithComma = (str) => {
+  return str.toString().replace(/\./g, ',');
+};

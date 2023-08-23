@@ -13,6 +13,7 @@ import { Store } from '../Store';
 import { getError } from '../utils';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import { toast } from 'react-toastify';
+import { replaceDotWithComma } from '../utils.js';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -121,7 +122,7 @@ export default function OrderScreen() {
           type: 'resetOptions',
           value: {
             'client-id': clientId,
-            currency: 'USD',
+            currency: 'EUR',
           },
         });
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
@@ -139,7 +140,7 @@ export default function OrderScreen() {
         <title>Pedido {orderId}</title>
       </Helmet>
       <h1 className="my-3">Pedido {orderId}</h1>
-      <Row>
+      <Row className="mt-4">
         <Col md={8}>
           <Card className="mb-3">
             <Card.Body>
@@ -194,7 +195,7 @@ export default function OrderScreen() {
                       <Col md={3}>
                         <span>{item.quantity}</span>
                       </Col>
-                      <Col md={3}>{item.price}€</Col>
+                      <Col md={3}>{replaceDotWithComma(item.price)}€</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}
@@ -210,19 +211,23 @@ export default function OrderScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Artículos</Col>
-                    <Col>{order.itemsPrice.toFixed(2)}€</Col>
+                    <Col>
+                      {replaceDotWithComma(order.itemsPrice.toFixed(2))}€
+                    </Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Gastos de envío</Col>
-                    <Col>{order.shippingPrice.toFixed(2)}€</Col>
+                    <Col>
+                      {replaceDotWithComma(order.shippingPrice.toFixed(2))}€
+                    </Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>IVA</Col>
-                    <Col>{order.taxPrice.toFixed(2)}€</Col>
+                    <Col>{replaceDotWithComma(order.taxPrice.toFixed(2))}€</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -231,7 +236,9 @@ export default function OrderScreen() {
                       <strong> Total del pedido</strong>
                     </Col>
                     <Col>
-                      <strong>{order.totalPrice.toFixed(2)}€</strong>
+                      <strong>
+                        {replaceDotWithComma(order.totalPrice.toFixed(2))}€
+                      </strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>

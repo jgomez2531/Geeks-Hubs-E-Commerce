@@ -13,6 +13,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { getError } from '../utils';
 import { Store } from '../Store';
+import { replaceDotWithComma } from '../utils.js';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -103,7 +104,9 @@ function ProductScreen() {
                 numReviews={product.numReviews}
               ></Rating>
             </ListGroup.Item>
-            <ListGroup.Item>Precio : {product.price}€</ListGroup.Item>
+            <ListGroup.Item>
+              Precio : {replaceDotWithComma(product.price)}€
+            </ListGroup.Item>
             <ListGroup.Item>
               Descripción:
               <p>{product.description}</p>
@@ -117,7 +120,7 @@ function ProductScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Precio:</Col>
-                    <Col>{product.price}€</Col>
+                    <Col>{replaceDotWithComma(product.price)}€</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>

@@ -52,7 +52,7 @@ function HomeScreen() {
         <title>GeeksHubs ECommerce</title>
       </Helmet>
       <h1>Productos destacados</h1>
-      <div className="products">
+      <div className="products mt-4">
         {loading ? (
           <LoadingBox />
         ) : error ? (

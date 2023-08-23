@@ -12,6 +12,7 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 import LoadingBox from '../components/LoadingBox';
+import { replaceDotWithComma } from '../utils.js';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -130,7 +131,7 @@ export default function PlaceOrderScreen() {
                       <Col md={3}>
                         <span>{item.quantity}</span>
                       </Col>
-                      <Col md={3}>{item.price}€</Col>
+                      <Col md={3}>{replaceDotWithComma(item.price)}€</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}
@@ -147,19 +148,23 @@ export default function PlaceOrderScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Artículos</Col>
-                    <Col>{cart.itemsPrice.toFixed(2)}€</Col>
+                    <Col>
+                      {replaceDotWithComma(cart.itemsPrice.toFixed(2))}€
+                    </Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Gastos de envío</Col>
-                    <Col>{cart.shippingPrice.toFixed(2)}€</Col>
+                    <Col>
+                      {replaceDotWithComma(cart.shippingPrice.toFixed(2))}€
+                    </Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>IVA</Col>
-                    <Col>{cart.taxPrice.toFixed(2)}€</Col>
+                    <Col>{replaceDotWithComma(cart.taxPrice.toFixed(2))}€</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -168,7 +173,9 @@ export default function PlaceOrderScreen() {
                       <strong> Total del pedido</strong>
                     </Col>
                     <Col>
-                      <strong>{cart.totalPrice.toFixed(2)}€</strong>
+                      <strong>
+                        {replaceDotWithComma(cart.totalPrice.toFixed(2))}€
+                      </strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>

@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { replaceDotWithComma } from '../utils.js';
 
 export default function CartScreen() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ export default function CartScreen() {
         <title>Cesta de compra</title>
       </Helmet>
       <h1>Cesta de compra</h1>
-      <Row>
+      <Row className="mt-4">
         <Col md={8}>
           {cartItems.length === 0 ? (
             <MessageBox>
@@ -82,7 +83,7 @@ export default function CartScreen() {
                         <i className="fas fa-plus-circle"></i>
                       </Button>
                     </Col>
-                    <Col md={3}>{item.price}€</Col>
+                    <Col md={3}>{replaceDotWithComma(item.price)}€</Col>
                     <Col md={2}>
                       <Button
                         onClick={() => removeItemHandler(item)}
@@ -105,7 +106,10 @@ export default function CartScreen() {
                   <h4>
                     Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
                     artículos) :&nbsp;
-                    {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}€
+                    {replaceDotWithComma(
+                      cartItems.reduce((a, c) => a + c.price * c.quantity, 0)
+                    )}
+                    €
                   </h4>
                 </ListGroup.Item>
                 <ListGroup.Item>

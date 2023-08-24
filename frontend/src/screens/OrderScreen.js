@@ -14,23 +14,46 @@ import { getError } from '../utils';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import { toast } from 'react-toastify';
 import { replaceDotWithComma } from '../utils.js';
+import Button from 'react-bootstrap/Button';
 
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':
       return { ...state, loading: true, error: '' };
+
     case 'FETCH_SUCCESS':
       return { ...state, loading: false, order: action.payload, error: '' };
+
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
+
     case 'PAY_REQUEST':
       return { ...state, loadingPay: true };
+
     case 'PAY_SUCCESS':
       return { ...state, loadingPay: false, successPay: true };
+
     case 'PAY_FAIL':
       return { ...state, loadingPay: false };
+
     case 'PAY_RESET':
       return { ...state, loadingPay: false, successPay: false };
+
+    case 'DELIVER_REQUEST':
+      return { ...state, loadingDeliver: true };
+
+    case 'DELIVER_SUCCESS':
+      return { ...state, loadingDeliver: false, successDeliver: true };
+
+    case 'DELIVER_FAIL':
+      return { ...state, loadingDeliver: false };
+
+    case 'DELIVER_RESET':
+      return {
+        ...state,
+        loadingDeliver: false,
+        successDeliver: false,
+      };
 
     default:
       return state;
@@ -44,14 +67,24 @@ export default function OrderScreen() {
   const { id: orderId } = params;
   const navigate = useNavigate();
 
-  const [{ loading, error, order, successPay, loadingPay }, dispatch] =
-    useReducer(reducer, {
-      loading: true,
-      order: {},
-      error: '',
-      successPay: false,
-      loadingPay: false,
-    });
+  const [
+    {
+      loading,
+      error,
+      order,
+      successPay,
+      loadingPay,
+      loadingDeliver,
+      successDeliver,
+    },
+    dispatch,
+  ] = useReducer(reducer, {
+    loading: true,
+    order: {},
+    error: '',
+    successPay: false,
+    loadingPay: false,
+  });
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
 
@@ -108,10 +141,18 @@ export default function OrderScreen() {
     if (!userInfo) {
       return navigate('/login');
     }
-    if (!order._id || successPay || (order._id && order._id !== orderId)) {
+    if (
+      !order._id ||
+      successPay ||
+      successDeliver ||
+      (order._id && order._id !== orderId)
+    ) {
       fetchOrder();
       if (successPay) {
         dispatch({ type: 'PAY_RESET' });
+      }
+      if (successDeliver) {
+        dispatch({ type: 'DELIVER_RESET' });
       }
     } else {
       const loadPaypalScript = async () => {
@@ -129,7 +170,33 @@ export default function OrderScreen() {
       };
       loadPaypalScript();
     }
-  }, [order, userInfo, orderId, navigate, paypalDispatch, successPay]);
+  }, [
+    order,
+    userInfo,
+    orderId,
+    navigate,
+    paypalDispatch,
+    successPay,
+    successDeliver,
+  ]);
+
+  async function deliverOrderHandler() {
+    try {
+      dispatch({ type: 'DELIVER_REQUEST' });
+      const { data } = await axios.put(
+        `/api/orders/${order._id}/deliver`,
+        {},
+        {
+          headers: { authorization: `Bearer ${userInfo.token}` },
+        }
+      );
+      dispatch({ type: 'DELIVER_SUCCESS', payload: data });
+      toast.success('Pedido enviado');
+    } catch (err) {
+      toast.error(getError(err));
+      dispatch({ type: 'DELIVER_FAIL' });
+    }
+  }
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
@@ -246,7 +313,7 @@ export default function OrderScreen() {
                   <ListGroup.Item>
                     {isPending ? (
                       <LoadingBox />
-                    ) : (
+                    ) : userInfo.isAdmin === false ? (
                       <div>
                         <PayPalButtons
                           createOrder={createOrder}
@@ -254,11 +321,23 @@ export default function OrderScreen() {
                           onError={onError}
                         ></PayPalButtons>
                       </div>
+                    ) : (
+                      <></>
                     )}
                     {loadingPay && <LoadingBox></LoadingBox>}
                   </ListGroup.Item>
                 )}
               </ListGroup>
+              {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+                <ListGroup.Item>
+                  {loadingDeliver && <LoadingBox></LoadingBox>}
+                  <div className="d-grid">
+                    <Button type="button" onClick={deliverOrderHandler}>
+                      Enviar pedido
+                    </Button>
+                  </div>
+                </ListGroup.Item>
+              )}
             </Card.Body>
           </Card>
         </Col>

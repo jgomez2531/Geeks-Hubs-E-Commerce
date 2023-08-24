@@ -49,9 +49,24 @@ productRouter.put(
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
       await product.save();
-      res.send({ message: 'Product Updated' });
+      res.send({ message: 'Artículo actualizado' });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Artículo no encontrado' });
+    }
+  })
+);
+
+productRouter.delete(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const product = await Product.findById(req.params.id);
+    if (product) {
+      await product.deleteOne();
+      res.send({ message: 'Artículo eliminado' });
+    } else {
+      res.status(404).send({ message: 'Artículo no encontrado' });
     }
   })
 );

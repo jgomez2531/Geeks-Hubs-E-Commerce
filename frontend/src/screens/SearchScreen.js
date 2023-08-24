@@ -12,6 +12,7 @@ import MessageBox from '../components/MessageBox';
 import Button from 'react-bootstrap/Button';
 import Product from '../components/Product';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import RatingSearch from '../components/RatingSearch';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -51,22 +52,22 @@ const prices = [
 
 export const ratings = [
   {
-    name: '4stars & up',
+    name: '4 estrellas y más',
     rating: 4,
   },
 
   {
-    name: '3stars & up',
+    name: '3 estrellas y más',
     rating: 3,
   },
 
   {
-    name: '2stars & up',
+    name: '2 estrellas y más',
     rating: 2,
   },
 
   {
-    name: '1stars & up',
+    name: '1 estrella y más',
     rating: 1,
   },
 ];
@@ -189,7 +190,7 @@ export default function SearchScreen() {
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                   >
-                    <Rating caption={' o más'} rating={r.rating}></Rating>
+                    <RatingSearch rating={r.rating} />
                   </Link>
                 </li>
               ))}
@@ -198,7 +199,7 @@ export default function SearchScreen() {
                   to={getFilterUrl({ rating: 'all' })}
                   className={rating === 'all' ? 'text-bold' : ''}
                 >
-                  <Rating caption={' o más'} rating={0}></Rating>
+                  <RatingSearch rating={0} />
                 </Link>
               </li>
             </ul>
@@ -217,8 +218,8 @@ export default function SearchScreen() {
                     {countProducts === 0 ? 'No' : countProducts} Resultados
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
-                    {price !== 'all' && ' : Price ' + price}
-                    {rating !== 'all' && ' : Rating ' + rating + ' & up'}
+                    {price !== 'all' && ' : Precio ' + price}
+                    {rating !== 'all' && ' : ' + rating + ' estrellas o más'}
                     {query !== 'all' ||
                     category !== 'all' ||
                     rating !== 'all' ||

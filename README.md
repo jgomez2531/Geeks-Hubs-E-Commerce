@@ -32,8 +32,6 @@
 
 ## Sobre este proyecto 🎯
 
-<p align="center"><img src="./dentalclinic/src/assets/Animation.gif"/></p>
-
 <p align="center">Proyecto final de BTC Backend de GeeksHubs Academy, en el cual se nos pide realizar una tienda de comercio electrónico que tenga un Endpoint para la gestión usuarios, otro para productos que se venden en la tienda y uno último para las compras que realicen los usuarios en la tienda. Como funciones extra de este proyecto se ha incluido un buscador para filtrar productos por nombre, aparte de también poder filtrar productos por valoración de clientes y por precios de artículos.</p>
 
 ## Producción 🚀
@@ -78,7 +76,7 @@
 </a>
 
 
-# APIs
+## APIs
 <p align="center">Para el siguiente proyecto se han hecho uso de las APIs de los siguientes servicios para dotar de un mayor realismo a la aplicación.</p>
 <img alt="MONGODB_ATLAS" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/1f2406e6-4068-4eac-bb66-db1ea6c7b170" width="200">
 &nbsp;

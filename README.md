@@ -78,12 +78,14 @@
 
 
 ## APIs
-<p align="center">Para el siguiente proyecto se han hecho uso de las APIs de los siguientes servicios para dotar de un mayor realismo a la aplicación.</p>
-<img alt="MONGODB_ATLAS" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/1f2406e6-4068-4eac-bb66-db1ea6c7b170" width="200">
-&nbsp;
-<img alt="CLOUDINARY" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/3ed29103-d2e4-4b22-b118-3b3df631b60d" width="200">
-&nbsp;
-<img alt="PAYPAL" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/d262e688-e5f2-4d03-abc1-753220195781" width="200">
+<div align="center">
+  <p align="center">Para el siguiente proyecto se han hecho uso de las APIs de los siguientes servicios para dotar de un mayor realismo a la aplicación.</p>
+  <img alt="MONGODB_ATLAS" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/1f2406e6-4068-4eac-bb66-db1ea6c7b170" width="200">
+  &nbsp;
+  <img alt="CLOUDINARY" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/3ed29103-d2e4-4b22-b118-3b3df631b60d" width="200">
+  &nbsp;
+  <img alt="PAYPAL" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/d262e688-e5f2-4d03-abc1-753220195781" width="200">
+</div>
 
 
 ## Implementación local

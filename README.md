@@ -42,38 +42,39 @@
 ## Tecnologías
 <div align="center">
   <a href="https://developer.mozilla.org/es/docs/Glossary/HTML5">
-    <img src= "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
-</a>
-<a href="https://developer.mozilla.org/es/docs/Web/CSS">
-    <img src= "https://user-images.githubusercontent.com/121863208/227808642-a8dcfecb-74b9-4796-8b2b-7bfe5cf1b4ba.svg"/>
-</a>
-  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
-    <img src= "https://img.shields.io/badge/javascipt-EFD81D?style=for-the-badge&logo=javascript&logoColor=black"/>
-</a>
-  <a href="https://getbootstrap.com/">
-    <img src= "https://user-images.githubusercontent.com/121863208/227808594-021a15ab-7e14-454b-b977-4a5ade8287ed.svg"/>
-</a>
-<a href="https://www.reactjs.com/">
-    <img src= "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-</a>
- <a href="https://redux.js.org/">
-    <img src= "https://user-images.githubusercontent.com/121863208/227808568-89a147ae-a047-4b1c-8065-9de44bd9bcb2.svg"/>
-</a>
-<a href="https://nodejs.org/es/">
-    <img src= "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"/>
-</a>
-  <a href="https://expressjs.com/">
-    <img src= "https://user-images.githubusercontent.com/121863208/227808665-1bf127e8-1ad3-4836-b42e-92bb5844a260.svg"/>
-</a>
-<a href="https://github.com/">
-    <img src= "https://user-images.githubusercontent.com/121863208/227808612-8d3f0fee-99d9-45d8-8274-6584c9ac0b38.svg"/>
-</a>
-<a href="https://git-scm.com/downloads">
-    <img src= "https://user-images.githubusercontent.com/121863208/227808620-cd6e5d5c-dd63-4a9d-b19d-0983807cae95.svg"/>
-</a>
-<a href="https://www.npmjs.com/">
-    <img src= "https://user-images.githubusercontent.com/121863208/227808650-2ae0204a-1c59-4789-bfa9-3f16b24b737d.svg"/>
-</a>
+      <img src= "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
+  </a>
+  <a href="https://developer.mozilla.org/es/docs/Web/CSS">
+      <img src= "https://user-images.githubusercontent.com/121863208/227808642-a8dcfecb-74b9-4796-8b2b-7bfe5cf1b4ba.svg"/>
+  </a>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
+      <img src= "https://img.shields.io/badge/javascipt-EFD81D?style=for-the-badge&logo=javascript&logoColor=black"/>
+  </a>
+    <a href="https://getbootstrap.com/">
+      <img src= "https://user-images.githubusercontent.com/121863208/227808594-021a15ab-7e14-454b-b977-4a5ade8287ed.svg"/>
+  </a>
+  <a href="https://www.reactjs.com/">
+      <img src= "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  </a>
+   <a href="https://redux.js.org/">
+      <img src= "https://user-images.githubusercontent.com/121863208/227808568-89a147ae-a047-4b1c-8065-9de44bd9bcb2.svg"/>
+  </a>
+  <a href="https://nodejs.org/es/">
+      <img src= "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"/>
+  </a>
+    <a href="https://expressjs.com/">
+      <img src= "https://user-images.githubusercontent.com/121863208/227808665-1bf127e8-1ad3-4836-b42e-92bb5844a260.svg"/>
+  </a>
+  <a href="https://github.com/">
+      <img src= "https://user-images.githubusercontent.com/121863208/227808612-8d3f0fee-99d9-45d8-8274-6584c9ac0b38.svg"/>
+  </a>
+  <a href="https://git-scm.com/downloads">
+      <img src= "https://user-images.githubusercontent.com/121863208/227808620-cd6e5d5c-dd63-4a9d-b19d-0983807cae95.svg"/>
+  </a>
+  <a href="https://www.npmjs.com/">
+      <img src= "https://user-images.githubusercontent.com/121863208/227808650-2ae0204a-1c59-4789-bfa9-3f16b24b737d.svg"/>
+  </a>
+</div>
 
 
 ## APIs

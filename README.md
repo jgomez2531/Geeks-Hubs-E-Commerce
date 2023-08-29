@@ -2,8 +2,6 @@
 
 <em> # Bienvenido a la aplicación E-Commerce de GeeksHubs Academy</em>
 
-
-
 ![image](https://user-images.githubusercontent.com/113507322/205169800-ae8aeff3-2afc-467c-8c53-6c1637671770.png)
 
 
@@ -24,9 +22,10 @@
     <li><a href="#Sobre-este-proyecto">Sobre este proyecto</a></li>
     <li><a href="#Producción ">Producción</a></li>
     <li><a href="#Tecnologías">Tecnologías</a></li>
-    <li><a href="#Implementación-local ">Implementación Local</a></li>
     <li><a href="#APIs">APIs</a></li>
+    <li><a href="#Implementación-local ">Implementación local</a></li>
     <li><a href="#Vista principal">Vista principal</a></li>
+    <li><a href="#Vista administrador">Vista administrador</a></li>
     <li><a href="#Licencia">Licencia</a></li>
   </ol>
 </details>
@@ -158,6 +157,8 @@ Datos de acceso como paciente:
 
 ## Licencia
 
-Proyecto bajo la licencia de Creative Commons Legal Code.
-![by-nc-sa eu](https://github.com/jgomez2531/mern-amazona/assets/76822966/95a8d39f-530f-4b21-82e3-e65038da8ff7)
+Proyecto bajo la licencia de Creative Commons Legal Code.  
+
+
+<img alt="CC" src="https://github.com/jgomez2531/mern-amazona/assets/76822966/95a8d39f-530f-4b21-82e3-e65038da8ff7" width="200">
 

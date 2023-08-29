@@ -122,7 +122,7 @@ Datos de acceso como administrador:
 
 > Correo electrónico: admin@geeks.com // Contraseña: 123456
 
-Datos de acceso como paciente: 
+Datos de acceso como cliente: 
 
 > Correo electrónico: user@geeks.com // Contraseña: 123456
 

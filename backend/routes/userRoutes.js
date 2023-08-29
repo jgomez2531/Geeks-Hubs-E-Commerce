@@ -30,6 +30,27 @@ userRouter.get(
   })
 );
 
+userRouter.delete(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+      if (user.email === 'admin@geeks.com') {
+        res
+          .status(400)
+          .send({ message: 'No se puede eliminar el usuario administrador' });
+        return;
+      }
+      await user.deleteOne();
+      res.send({ message: 'Usuario eliminado' });
+    } else {
+      res.status(404).send({ message: 'Usuario no encontrado' });
+    }
+  })
+);
+
 userRouter.put(
   '/:id',
   isAuth,
@@ -41,7 +62,7 @@ userRouter.put(
       user.email = req.body.email || user.email;
       user.isAdmin = Boolean(req.body.isAdmin);
       const updatedUser = await user.save();
-      res.send({ message: 'User Updated', user: updatedUser });
+      res.send({ message: 'Usuario actualizado', user: updatedUser });
     } else {
       res.status(404).send({ message: 'Usuario no encontrado' });
     }

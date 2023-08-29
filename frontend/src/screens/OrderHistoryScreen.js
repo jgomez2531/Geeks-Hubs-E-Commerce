@@ -92,7 +92,9 @@ export default function OrderHistoryScreen() {
                 </td>
                 <td>
                   {order.isDelivered
-                    ? order.deliveredAt.substring(0, 10)
+                    ? moment(
+                        new Date(order.deliveredAt.substring(0, 10))
+                      ).format('DD/MM/YYYY')
                     : 'No'}
                 </td>
                 <td>

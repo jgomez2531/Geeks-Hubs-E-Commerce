@@ -1,4 +1,4 @@
-# mern-amazona
+# Geeks-Hubs-E-Commerce
 
 <em> # Bienvenido a la aplicación E-Commerce de GeeksHubs Academy</em>
 
